@@ -1,0 +1,11 @@
+<!--
+#@projects instance variable is declared in the Pages#Home controller
+#@projects = Project.all.limit(10) -- assigned the value of 10 projects records in an array.
+#Reminder: Can not call method directly on an array. We iterate through the array and then apply the logic
+
+#Iterate through instance variable @projects
+#Stores the value inside a specific iterator variable |project|
+#call the title on a single Object -->
+<% @projects.each do |project| %>
+   <p><strong><%= project.title %></strong> - <em><%= project.description %> <%= " | #{project.percent_complete}" if project.percent_complete != nil %></em></p>
+<% end %>
